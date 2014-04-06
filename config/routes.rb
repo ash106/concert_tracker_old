@@ -1,4 +1,5 @@
 ConcertTracker::Application.routes.draw do
+  get "/concerts", to: "concerts#index", as: :concerts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

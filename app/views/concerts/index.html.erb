@@ -1,0 +1,7 @@
+<h1><%= pluralize(@concerts.size, "Concert") %></h1>
+
+<ul>
+  <% @concerts.each do |concert| %>
+    <li><%= concert %></li>
+  <% end %>
+</ul>
