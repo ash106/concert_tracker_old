@@ -3,10 +3,7 @@ require 'spec_helper'
 describe "Viewing an individual concert" do
 
   it "shows the concert's details" do
-    concert = Concert.create(bands: "Pelican, Circa Survive, Thrice",
-                             venue: "The Masquerade",
-                             location: "Atlanta, GA",
-                             date: "2008-04-26")
+    concert = Concert.create(concert_attributes)
 
     visit concert_url(concert)
 

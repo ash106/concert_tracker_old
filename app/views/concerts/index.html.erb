@@ -2,7 +2,7 @@
 
 <ul>
   <% @concerts.each do |concert| %>
-    <p><%= concert.bands %></p>
+    <p><%= link_to concert.bands, concert %></p>
     <p><%= concert.venue %></p>
     <p><%= concert.location %></p>
     <p><%= concert.date %></p>
