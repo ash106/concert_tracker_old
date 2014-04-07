@@ -27,6 +27,12 @@ class ConcertsController < ApplicationController
     redirect_to @concert
   end
 
+  def destroy
+    @concert = Concert.find(params[:id])
+    @concert.destroy
+    redirect_to concerts_url
+  end
+
 private
 
   def concert_params

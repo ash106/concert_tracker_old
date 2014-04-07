@@ -5,4 +5,5 @@
 <p><%= @concert.venue %> | <%= @concert.location %></p>
 
 <%= link_to "All Concerts", concerts_path %> |
-<%= link_to "Edit", edit_concert_path(@concert) %>
+<%= link_to "Edit", edit_concert_path(@concert) %> |
+<%= link_to "Delete", concert_path(@concert), method: :delete, data: { confirm: 'Are you sure?' } %>
