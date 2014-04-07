@@ -2,6 +2,8 @@ ConcertTracker::Application.routes.draw do
   root 'concerts#index'
   get "/concerts", to: "concerts#index", as: :concerts
   get "/concerts/:id", to: "concerts#show", as: :concert
+  get "/concerts/:id/edit", to: "concerts#edit", as: :edit_concert
+  patch "/concerts/:id", to: "concerts#update"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

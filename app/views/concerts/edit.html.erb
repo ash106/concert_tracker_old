@@ -1,0 +1,21 @@
+<%= form_for(@concert) do |f| %>
+  <p>
+    <%= f.label :bands %><br />
+    <%= f.text_field :bands %>
+  </p>
+  <p>
+    <%= f.label :venue %><br />
+    <%= f.text_field :venue %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_field :date %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
