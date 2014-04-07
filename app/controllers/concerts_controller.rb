@@ -17,6 +17,16 @@ class ConcertsController < ApplicationController
     redirect_to @concert
   end
 
+  def new
+    @concert = Concert.new
+  end
+
+  def create
+    @concert = Concert.new(concert_params)
+    @concert.save
+    redirect_to @concert
+  end
+
 private
 
   def concert_params
