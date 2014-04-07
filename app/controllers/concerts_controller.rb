@@ -1,6 +1,6 @@
 class ConcertsController < ApplicationController
   def index
-    @concerts = Concert.all
+    @concerts = Concert.attended
   end
 
   def show

@@ -30,4 +30,12 @@ describe "Viewing the list of concerts" do
     expect(page).to have_text(concert1.date)
   end
 
+  it "does not show a concert that hasn't yet been attended" do
+    concert = Concert.create(concert_attributes(date: 1.month.from_now))
+
+    visit concerts_url
+
+    expect(page).not_to have_text(concert.bands)
+  end
+
 end
