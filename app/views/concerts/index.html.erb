@@ -2,6 +2,9 @@
 
 <ul>
   <% @concerts.each do |concert| %>
-    <li><%= concert %></li>
+    <p><%= concert.bands %></p>
+    <p><%= concert.venue %></p>
+    <p><%= concert.location %></p>
+    <p><%= concert.date %></p>
   <% end %>
 </ul>
