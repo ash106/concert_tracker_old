@@ -22,4 +22,38 @@ describe "A concert" do
     expect(Concert.attended).to eq([concert3, concert2, concert1])
   end
 
+  it "requires a list of bands" do
+    concert = Concert.new(bands: "")
+
+    expect(concert.valid?).to be_false
+    expect(concert.errors[:bands].any?).to be_true
+  end
+
+  it "requires a venue" do
+    concert = Concert.new(venue: "")
+
+    expect(concert.valid?).to be_false
+    expect(concert.errors[:venue].any?).to be_true
+  end
+
+  it "requires a location" do
+    concert = Concert.new(location: "")
+
+    expect(concert.valid?).to be_false
+    expect(concert.errors[:location].any?).to be_true
+  end
+
+  it "requires a date" do
+    concert = Concert.new(date: "")
+
+    expect(concert.valid?).to be_false
+    expect(concert.errors[:date].any?).to be_true
+  end
+
+  it "is valid with example attributes" do
+    concert = Concert.new(concert_attributes)
+
+    expect(concert.valid?).to be_true
+  end
+
 end
