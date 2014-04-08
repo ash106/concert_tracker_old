@@ -19,6 +19,7 @@ describe "Creating a new concert" do
     expect(current_path).to eq(concert_path(Concert.last))
 
     expect(page).to have_text('Pelican, Circa Survive, Thrice')
+    expect(page).to have_text('Concert successfully created!')
   end
 
   it "does not save the concert if it's invalid" do

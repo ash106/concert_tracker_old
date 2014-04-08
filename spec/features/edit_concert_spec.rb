@@ -20,6 +20,7 @@ describe "Editing a concert" do
     expect(current_path).to eq(concert_path(concert))
 
     expect(page).to have_text('Updated Bands')
+    expect(page).to have_text('Concert successfully updated!')
   end
 
   it "does not update the concert if it's invalid" do
