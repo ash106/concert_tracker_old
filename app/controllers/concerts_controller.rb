@@ -13,8 +13,11 @@ class ConcertsController < ApplicationController
 
   def update
     @concert = Concert.find(params[:id])
-    @concert.update(concert_params)
-    redirect_to @concert
+    if @concert.update(concert_params)
+      redirect_to @concert
+    else
+      render :edit
+    end
   end
 
   def new
@@ -23,8 +26,11 @@ class ConcertsController < ApplicationController
 
   def create
     @concert = Concert.new(concert_params)
-    @concert.save
-    redirect_to @concert
+    if @concert.save
+      redirect_to @concert
+    else
+      render :new
+    end
   end
 
   def destroy

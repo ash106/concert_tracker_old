@@ -21,4 +21,15 @@ describe "Creating a new concert" do
     expect(page).to have_text('Pelican, Circa Survive, Thrice')
   end
 
+  it "does not save the concert if it's invalid" do
+    visit new_concert_url
+
+    expect {
+      click_button 'Create Concert'
+    }.not_to change(Concert, :count)
+
+    expect(current_path).to eq(concerts_path)
+    expect(page).to have_text('error')
+  end
+
 end

@@ -22,4 +22,16 @@ describe "Editing a concert" do
     expect(page).to have_text('Updated Bands')
   end
 
+  it "does not update the concert if it's invalid" do
+    concert = Concert.create(concert_attributes)
+
+    visit edit_concert_url(concert)
+
+    fill_in 'Bands', with: " "
+
+    click_button 'Update Concert'
+
+    expect(page).to have_text('error')
+  end
+
 end

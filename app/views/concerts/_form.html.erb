@@ -1,4 +1,5 @@
 <%= form_for(@concert) do |f| %>
+  <%= render "shared/errors", object: @concert %>
   <p>
     <%= f.label :bands %><br />
     <%= f.text_field :bands, autofocus: true %>
