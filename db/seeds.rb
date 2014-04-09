@@ -8,34 +8,57 @@
 
 Concert.create!([
   {
-    bands: "Pelican, Circa Survive, Thrice",
     venue: "The Masquerade",
     location: "Atlanta, GA",
     date: "2008-04-26"
   },
   {
-    bands: "Facing New York, Emanuel, Taking Back Sunday",
     venue: "Boulder Theatre",
     location: "Boulder, CO",
     date: "2006-03-31"
   },
   {
-    bands: "The Outline, Envy On The Coast, Your Enemies Friends, Forgive Durden, Saosin",
     venue: "The Door",
     location: "Dallas, TX",
     date: "2006-08-10"
   },
   {
-    bands: "New London Fire, From Autumn To Ashes, Lifetime, Thursday",
     venue: "The Starland Ballroom",
     location: "Sayreville, NJ",
     date: "2006-12-27"
   },
   {
-    bands: "Zechs Marquise, Dredg, Rx Bandits",
     venue: "House of Blues",
     location: "New Orleans, LA",
     date: "2009-07-18"
   }
 ])
+
+concert = Concert.find_by(date: "2008-04-26")
+concert.bands.create!(name: "Pelican")
+concert.bands.create!(name: "Circa Survive")
+concert.bands.create!(name: "Thrice")
+
+concert = Concert.find_by(date: "2006-03-31")
+concert.bands.create!(name: "Facing New York")
+concert.bands.create!(name: "Emanuel")
+concert.bands.create!(name: "Taking Back Sunday")
+
+concert = Concert.find_by(date: "2006-08-10")
+concert.bands.create!(name: "The Outline")
+concert.bands.create!(name: "Envy On The Coast")
+concert.bands.create!(name: "Your Enemies Friends")
+concert.bands.create!(name: "Forgive Durden")
+concert.bands.create!(name: "Saosin")
+
+concert = Concert.find_by(date: "2006-12-27")
+concert.bands.create!(name: "New London Fire")
+concert.bands.create!(name: "From Autumn To Ashes")
+concert.bands.create!(name: "Lifetime")
+concert.bands.create!(name: "Thursday")
+
+concert = Concert.find_by(date: "2009-07-18")
+concert.bands.create!(name: "Zechs Marquise")
+concert.bands.create!(name: "Dredg")
+concert.bands.create!(name: "Rx Bandits")
     

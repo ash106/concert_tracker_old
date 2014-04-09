@@ -49,4 +49,24 @@ describe "A concert" do
     expect(concert.valid?).to be_true
   end
 
+  it "has many bands" do
+    concert = Concert.new(concert_attributes)
+
+    band1 = concert.bands.new(band_attributes)
+    band2 = concert.bands.new(band_attributes)
+
+    expect(concert.bands).to include(band1)
+    expect(concert.bands).to include(band2)
+  end
+
+  it "deletes associated bands" do
+    concert = Concert.create(concert_attributes)
+
+    concert.bands.create(band_attributes)
+
+    expect {
+      concert.destroy
+    }.to change(Band, :count).by(-1)
+  end
+
 end
