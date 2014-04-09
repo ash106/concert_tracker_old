@@ -1,0 +1,13 @@
+<h1>Add Band for <%= link_to @concert.date, @concert %></h1>
+
+<%= form_for([@concert, @band]) do |f| %>
+  <%= render "shared/errors", object: @band %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+  <p>
+    <%= f.submit "Add Band" %> |
+    <%= link_to "Cancel", concert_path(@concert) %>
+  </p>
+<% end %>
