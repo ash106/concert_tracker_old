@@ -2,5 +2,7 @@
 
 <p><%= @concert.venue %> | <%= @concert.location %></p>
 
+<p><%= link_to pluralize(@concert.bands.size, "Band"), concert_bands_path(@concert) %></p>
+
 <%= link_to "Edit", edit_concert_path(@concert) %> |
 <%= link_to "Delete", concert_path(@concert), method: :delete, data: { confirm: 'Are you sure?' } %>

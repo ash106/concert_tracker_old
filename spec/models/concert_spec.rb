@@ -52,8 +52,8 @@ describe "A concert" do
   it "has many bands" do
     concert = Concert.new(concert_attributes)
 
-    band1 = concert.bands.new(band_attributes)
-    band2 = concert.bands.new(band_attributes)
+    band1 = concert.bands.new(band_attributes(name: "Circa Survive"))
+    band2 = concert.bands.new(band_attributes(name: "Thrice"))
 
     expect(concert.bands).to include(band1)
     expect(concert.bands).to include(band2)

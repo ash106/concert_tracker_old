@@ -1,0 +1,5 @@
+<h1>Bands on <%= link_to @concert.date, @concert %></h1>
+
+<% @bands.each do |band| %>
+  <p><%= band.name %></p>
+<% end %>
