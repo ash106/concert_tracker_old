@@ -6,4 +6,8 @@ class Concert < ActiveRecord::Base
   def self.attended
     where("date <= ?", Time.now).order("date desc")
   end
+
+  def num_of_bands
+    bands.size
+  end
 end

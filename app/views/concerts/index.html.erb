@@ -2,7 +2,7 @@
 
 <ul>
   <% @concerts.each do |concert| %>
-    <p><%= link_to concert.date, concert %> - <%= pluralize(concert.bands.size, "band") %></p>
+    <p><%= link_to concert.date, concert %> - <%= pluralize(concert.num_of_bands, "band") %></p>
     <p><%= concert.venue %> | <%= concert.location %></p>    
   <% end %>
 </ul>

@@ -69,4 +69,14 @@ describe "A concert" do
     }.to change(Band, :count).by(-1)
   end
 
+  it "calculates the number of bands for the concert" do
+    concert = Concert.create(concert_attributes)
+
+    concert.bands.create(band_attributes(name: "Pelican"))
+    concert.bands.create(band_attributes(name: "Circa Survive"))
+    concert.bands.create(band_attributes(name: "Thrice"))
+
+    expect(concert.num_of_bands).to eq(3)
+  end
+
 end
