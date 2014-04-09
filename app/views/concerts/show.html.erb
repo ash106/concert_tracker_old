@@ -4,6 +4,10 @@
 
 <p><%= link_to pluralize(@concert.bands.size, "Band"), concert_bands_path(@concert) %></p>
 
+<% @concert.bands.each do |band| %>
+  <p>- <%= band.name %></p>
+<% end %>
+
 <p><%= link_to "Add Band", new_concert_band_path(@concert) %></p>
 
 <%= link_to "Edit", edit_concert_path(@concert) %> |
