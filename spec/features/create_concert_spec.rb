@@ -9,7 +9,6 @@ describe "Creating a new concert" do
 
     expect(current_path).to eq(new_concert_path)
 
-    fill_in "Bands", with: "Pelican, Circa Survive, Thrice"
     fill_in "Venue", with: "The Masquerade"
     fill_in "Location", with: "Atlanta, GA"
     fill_in "Date", with: "2008-04-26"
@@ -18,7 +17,7 @@ describe "Creating a new concert" do
 
     expect(current_path).to eq(concert_path(Concert.last))
 
-    expect(page).to have_text('Pelican, Circa Survive, Thrice')
+    expect(page).to have_text('The Masquerade')
     expect(page).to have_text('Concert successfully created!')
   end
 

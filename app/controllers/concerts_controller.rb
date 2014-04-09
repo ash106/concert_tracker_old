@@ -42,6 +42,6 @@ class ConcertsController < ApplicationController
 private
 
   def concert_params
-    params.require(:concert).permit(:bands, :venue, :location, :date)
+    params.require(:concert).permit(:venue, :location, :date)
   end
 end

@@ -10,7 +10,7 @@ describe "Deleting a concert" do
     click_link 'Delete'
 
     expect(current_path).to eq(concerts_path)
-    expect(page).not_to have_text(concert.bands)
+    expect(page).not_to have_text(concert.date)
     expect(page).to have_text("Concert successfully deleted!")
   end
 

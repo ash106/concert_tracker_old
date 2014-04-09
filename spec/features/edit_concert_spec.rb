@@ -11,15 +11,15 @@ describe "Editing a concert" do
 
     expect(current_path).to eq(edit_concert_path(concert))
 
-    expect(find_field('Bands').value).to eq(concert.bands)
+    expect(find_field('Venue').value).to eq(concert.venue)
 
-    fill_in 'Bands', with: "Updated Bands"
+    fill_in 'Venue', with: "Updated Venue"
 
     click_button 'Update Concert'
 
     expect(current_path).to eq(concert_path(concert))
 
-    expect(page).to have_text('Updated Bands')
+    expect(page).to have_text('Updated Venue')
     expect(page).to have_text('Concert successfully updated!')
   end
 
@@ -28,7 +28,7 @@ describe "Editing a concert" do
 
     visit edit_concert_url(concert)
 
-    fill_in 'Bands', with: " "
+    fill_in 'Venue', with: " "
 
     click_button 'Update Concert'
 

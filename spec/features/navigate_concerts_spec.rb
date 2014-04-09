@@ -17,7 +17,7 @@ describe "Navigating concerts" do
 
     visit concerts_url
 
-    click_link concert.bands
+    click_link concert.date
 
     expect(current_path).to eq(concert_path(concert))
   end

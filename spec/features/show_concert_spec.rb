@@ -7,7 +7,6 @@ describe "Viewing an individual concert" do
 
     visit concert_url(concert)
 
-    expect(page).to have_text(concert.bands)
     expect(page).to have_text(concert.venue)
     expect(page).to have_text(concert.location)
     expect(page).to have_text(concert.date)
